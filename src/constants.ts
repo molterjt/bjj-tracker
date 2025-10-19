@@ -1,0 +1,44 @@
+export enum TABS {
+  TECHNIQUES = 'techniques',
+  CLASS = 'classes',
+  VIZ = 'visualize'
+}
+
+export enum STORAGE {
+  TECHS = "bjj-techs",
+  CLASS = "bjj-classes"
+}
+
+export enum CATEGORY {
+  POS = "Position",
+  TRAN = "Transition",
+  SUB = "Submission",
+}
+
+export type CategoryKeys = CATEGORY.POS | CATEGORY.TRAN | CATEGORY.SUB;
+
+interface CategoryStyle {
+  /** The color value, which can be in 'rgba()' or hex format. */
+  color: string;
+  /** The radius value for the category. */
+  radius: number;
+}
+
+export const CATEGORIES: Record<CATEGORY, CategoryStyle> = {
+  "Position": {
+    "color": 'rgba(80,20,255,1)',
+    "radius": 20,
+  },
+  "Transition": {
+    "color": '#10b981',
+    "radius": 15,
+  },
+  "Submission": {
+    "color": '#ef4444',
+    "radius": 15,
+  },
+}
+
+export const getRadius = (key: CATEGORY) => CATEGORIES[key].radius || 18;
+export const getColor = (key: CATEGORY) => CATEGORIES[key].color || '#6b7280';
+
