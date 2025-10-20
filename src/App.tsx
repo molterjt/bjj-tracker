@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import ForceGraph from './components/graph/ForceGraph';
-import { sampleTechniques } from './data/SampleData';
+import { sampleClasses, sampleTechniques } from './data/SampleData';
 import Tabs from './components/Tabs';
 import { STORAGE, TABS } from './constants';
 import Techniques from './components/technique/Techniques';
-import Classes from './components/Classes';
+// import Classes from './components/Classes';
 import { IRootState, useAppDispatch } from './state/Store';
 import { useSelector } from 'react-redux';
 import { setTechniques } from './state/slices/techniquesSlice';
+import { setClasses } from './state/slices/classSlice';
+import ClassesWithGraph from './components/ClassesWithGraph';
 
 
 const title = "BJJ Library"
@@ -18,6 +20,9 @@ const App = () => {
   const [loaded, setLoaded] = useState<boolean>(false);
   const { techniques } = useSelector(
     (state: IRootState) => state.techState,
+  );
+  const { classes } = useSelector(
+    (state: IRootState) => state.classState,
   );
   const { activeTab, } = useSelector(
     (state: IRootState) => state.tabState,
@@ -43,6 +48,22 @@ const App = () => {
     }
   }, [loaded]);
 
+  useEffect(() => {
+    if (techniques.length === 0) {
+      const storedClasses = localStorage.getItem(STORAGE.CLASS);
+      if (storedClasses) {
+        const parsedClasses = JSON.parse(storedClasses);
+        if (parsedClasses && parsedClasses.length > 0) {
+          console.log("Loading classes from storage")
+          dispatch(setClasses(parsedClasses));
+          return;
+        }
+      }
+      console.log("Loading classes from sample data")
+      dispatch(setClasses(sampleClasses))
+    }
+  }, [])
+
   return (
     <div className="container">
       <div className="content">
@@ -50,7 +71,7 @@ const App = () => {
         <p className="subtitle">{subTitle}</p>
         <Tabs />
         {activeTab === TABS.TECHNIQUES && (<Techniques />)}
-        {activeTab === TABS.CLASS && (<Classes />)}
+        {activeTab === TABS.CLASS && (<ClassesWithGraph />)}
         {activeTab === TABS.VIZ && (
           <ForceGraph techniques={techniques} />
         )}

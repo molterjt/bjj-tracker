@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import { Plus, Trash2 } from 'lucide-react'
 import { ClassSession } from '../state/types';
 import { useSelector } from 'react-redux';
-import { IRootState } from '../state/Store';
+import { IRootState, useAppDispatch } from '../state/Store';
 import '../App.css';
+import { deleteClass, setClasses } from '../state/slices/classSlice';
 
 export default function Classes() {
-  const [classes, setClasses] = useState<ClassSession[]>([]);
-
+  const dispatch = useAppDispatch();
   const [showClassForm, setShowClassForm] = useState(false);
   const [newClass, setNewClass] = useState<Omit<ClassSession, 'id'>>({
     date: new Date().toISOString().split('T')[0],
@@ -17,13 +17,17 @@ export default function Classes() {
   const { techniques } = useSelector(
     (state: IRootState) => state.techState,
   );
+  const { classes } = useSelector(
+    (state: IRootState) => state.classState,
+  );
 
   const addClass = () => {
     const classSession: ClassSession = {
       ...newClass,
       id: Date.now().toString()
     };
-    setClasses([...classes, classSession]);
+    dispatch(setClasses([...classes, classSession]))
+    // setClasses([...classes, classSession]);
     setNewClass({
       date: new Date().toISOString().split('T')[0],
       techniqueIds: [],
@@ -32,11 +36,10 @@ export default function Classes() {
     setShowClassForm(false);
   };
 
-  const deleteClass = (id: string) => {
+  const handleDelete = (id: string) => {
+    dispatch(deleteClass(id));
     setClasses(classes.filter(c => c.id !== id));
   };
-
-
 
   const toggleTechniqueSelection = (techId: string) => {
     setNewClass(prev => ({
@@ -123,7 +126,7 @@ export default function Classes() {
                 )}
               </div>
               <button
-                onClick={() => deleteClass(cls.id)}
+                onClick={() => handleDelete(cls.id)}
                 className="btn-danger-icon"
               >
                 <Trash2 size={18} />

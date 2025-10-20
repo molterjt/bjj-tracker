@@ -2,7 +2,6 @@ import { Technique } from "../state/types";
 
 
 export const sampleTechniques: Technique[] = [
-
   {
     "id": "1",
     "name": "Closed Guard",
@@ -139,6 +138,37 @@ export const sampleTechniques: Technique[] = [
       "8"
     ],
     "id": "1760890227276"
+  },
+  {
+    "name": "Choi Bar",
+    "paths": [
+      "Submission > Ground > Side Control > Bottom"
+    ],
+    "description": "Cool arm bar from side control",
+    "relatedTechniques": [
+      "6"
+    ],
+    "id": "1760930492436"
+  },
+  {
+    "name": "Open Guard",
+    "paths": [
+      "Position > Ground > Guard"
+    ],
+    "description": "",
+    "relatedTechniques": [],
+    "id": "1760930560467"
+  },
+  {
+    "name": "Tri-Pod Sweep",
+    "paths": [
+      "Transition > Ground > Guard"
+    ],
+    "description": "",
+    "relatedTechniques": [
+      "1760930560467"
+    ],
+    "id": "1760930612934"
   }
 ]
 
@@ -182,10 +212,41 @@ export const sampleData: { [key: string]: any } = {
 
     },
     'Standing': {
-      'Chokes': ['Standing Guillotine', 'Standing RNC']
+      'Chokes': ['Standing Guillotine', 'Standing RNC'],
+      'Joint Locks': ['Wrist Lock']
     }
   }
 };
 
 
 export const DEFAULT_CATEGORIES = ['Guard', 'Pass', 'Submission', 'Escape', 'Takedown', 'Position'];
+
+
+export const sampleClasses = [
+  {
+    "date": "2025-10-20",
+    "techniqueIds": [
+      "1760930560467",
+      "1760930612934",
+      "8",
+      "1760890227276",
+      "1760930492436",
+      "6"
+    ],
+    "notes": "",
+    "id": "1760934390045"
+  },
+  {
+    "date": "2025-10-19",
+    "techniqueIds": [
+      "1",
+      "3",
+      "2",
+      "4",
+      "1760930492436",
+      "6"
+    ],
+    "notes": "",
+    "id": "1760935648772"
+  }
+]
