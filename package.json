@@ -2,7 +2,6 @@
   "name": "bjj-tracker",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://molterjt.github.io/bjj-tracker",
   "dependencies": {
     "@reduxjs/toolkit": "^2.9.1",
     "@testing-library/dom": "^10.4.1",
