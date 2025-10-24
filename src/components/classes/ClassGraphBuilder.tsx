@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
-import { Technique } from '../state/types';
-import { getColor, getRadius } from '../constants';
+import { Technique } from '../../state/types';
+import { getColor, getRadius } from '../../constants';
 
 interface ClassGraphBuilderProps {
   techniques: Technique[];

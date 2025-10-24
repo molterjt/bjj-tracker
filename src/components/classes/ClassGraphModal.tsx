@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import { X } from 'lucide-react';
-import { ClassSession, Technique } from '../state/types';
-import { getColor, getRadius } from '../constants';
+import { ClassSession, Technique } from '../../state/types';
+import { getColor, getRadius } from '../../constants';
 
 interface ClassGraphModalProps {
   classSession: ClassSession;

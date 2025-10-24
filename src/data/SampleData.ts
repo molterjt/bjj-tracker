@@ -6,7 +6,7 @@ export const sampleTechniques: Technique[] = [
     "id": "1",
     "name": "Closed Guard",
     "paths": [
-      "Position > Ground > Guard > Closed Guard"
+      "Position > Guard > Closed Guard"
     ],
     "description": "Fundamental guard position with legs locked around opponent",
     "relatedTechniques": [
@@ -19,7 +19,7 @@ export const sampleTechniques: Technique[] = [
     "id": "2",
     "name": "Triangle Choke",
     "paths": [
-      "Submission > Ground > Guard > Triangle"
+      "Submission > Guard > Triangle"
     ],
     "description": "Choke using legs from guard, also a controlling position",
     "relatedTechniques": [
@@ -31,7 +31,7 @@ export const sampleTechniques: Technique[] = [
     "id": "3",
     "name": "Armbar from Guard",
     "paths": [
-      "Submission > Ground > Guard > Armbar"
+      "Submission > Guard > Armbar"
     ],
     "description": "Classic submission attacking the elbow",
     "relatedTechniques": [
@@ -43,7 +43,7 @@ export const sampleTechniques: Technique[] = [
     "id": "4",
     "name": "Scissor Sweep",
     "paths": [
-      "Transition > Ground > Guard > Sweep"
+      "Transition > Guard > Sweep"
     ],
     "description": "Fundamental sweep from closed guard",
     "relatedTechniques": [
@@ -53,7 +53,7 @@ export const sampleTechniques: Technique[] = [
   {
     "name": "Turtle",
     "paths": [
-      "Position > Ground > Turtle"
+      "Position > Turtle"
     ],
     "description": "Position generally attacking from with oppenent balled up in prone position",
     "relatedTechniques": [
@@ -65,7 +65,7 @@ export const sampleTechniques: Technique[] = [
     "id": "6",
     "name": "Side Control",
     "paths": [
-      "Position > Ground > Side Control"
+      "Position > Side Control"
     ],
     "description": "Position generally attacking from with oppenent balled up in prone position",
     "relatedTechniques": []
@@ -74,7 +74,7 @@ export const sampleTechniques: Technique[] = [
     "id": "7",
     "name": "Mount",
     "paths": [
-      "Position > Ground > Mount"
+      "Position > Mount"
     ],
     "description": "Position generally attacking from with oppenent balled up in prone position",
     "relatedTechniques": []
@@ -83,7 +83,7 @@ export const sampleTechniques: Technique[] = [
     "id": "8",
     "name": "Half Guard",
     "paths": [
-      "Position > Ground > Half Guard"
+      "Position > Half Guard"
     ],
     "description": "Position generally attacking from with oppenent balled up in prone position",
     "relatedTechniques": []
@@ -92,7 +92,7 @@ export const sampleTechniques: Technique[] = [
     "id": "9",
     "name": "Back Control",
     "paths": [
-      "Position > Ground > Back Control"
+      "Position > Back Control"
     ],
     "description": "Position generally attacking from with oppenent balled up in prone position",
     "relatedTechniques": []
@@ -100,7 +100,7 @@ export const sampleTechniques: Technique[] = [
   {
     "name": "Rear Nake Choke",
     "paths": [
-      "Submission > Ground > Back Control > Top"
+      "Submission > Back Control > Top"
     ],
     "description": "Mate Leon",
     "relatedTechniques": [
@@ -120,7 +120,7 @@ export const sampleTechniques: Technique[] = [
   {
     "name": "Clock Choke",
     "paths": [
-      "Submission > Ground > Turtle > Turtle Top"
+      "Submission > Turtle > Turtle Top"
     ],
     "description": "",
     "relatedTechniques": [
@@ -131,7 +131,7 @@ export const sampleTechniques: Technique[] = [
   {
     "name": "John Wayne Sweep",
     "paths": [
-      "Transition > Ground > Half Guard > Bottom"
+      "Transition > Half Guard > Bottom"
     ],
     "description": "",
     "relatedTechniques": [
@@ -142,7 +142,7 @@ export const sampleTechniques: Technique[] = [
   {
     "name": "Choi Bar",
     "paths": [
-      "Submission > Ground > Side Control > Bottom"
+      "Submission > Side Control > Bottom"
     ],
     "description": "Cool arm bar from side control",
     "relatedTechniques": [
@@ -153,7 +153,7 @@ export const sampleTechniques: Technique[] = [
   {
     "name": "Open Guard",
     "paths": [
-      "Position > Ground > Guard"
+      "Position > Guard"
     ],
     "description": "",
     "relatedTechniques": [],
@@ -162,7 +162,7 @@ export const sampleTechniques: Technique[] = [
   {
     "name": "Tri-Pod Sweep",
     "paths": [
-      "Transition > Ground > Guard"
+      "Transition > Guard"
     ],
     "description": "",
     "relatedTechniques": [
@@ -172,21 +172,30 @@ export const sampleTechniques: Technique[] = [
   }
 ]
 
+
 export const sampleData: { [key: string]: any } = {
   'Position': {
-    'Ground': {
-      'Guard': ['Closed Guard', 'Open Guard', 'Half Guard', 'Butterfly Guard', 'X Guard', 'De La Riva', 'Turtle'],
-      'Top': ['Mount', 'Side Control', 'Knee on Belly', 'North South', 'Back Control'],
-      'Turtle': ['Turtle Top', 'Turtle Bottom'],
-      'Side Control': ['Top', 'Bottom'],
-      'Half Guard': ['Top', 'Bottom'],
-      'Back Control': ['Top', 'Bottom'],
+    'Guard': {
+      "Closed Guard": ['Top', 'Bottom'],
+      "Open Guard": ['Top', 'Bottom'],
+      "Butterfly Guard": ['Top', 'Bottom'],
+      "X Guard": ['Top', 'Bottom'],
+      "De La Riva": ['Top', 'Bottom'],
+      "Knee Shield": ['Top', 'Bottom'],
     },
-    'Standing': {
-      'Gi': ['Collar-Sleeve'],
-      'NoGi': ['Over Under', 'Double Underhooks', 'Body Lock'],
-      'No Grips': ['Shots'],
-    }
+    // 'Guard': ['Top', 'Bottom'],
+    'Turtle': ['Top', 'Bottom'],
+    'Side Control': ['Top', 'Bottom'],
+    'Half Guard': ['Top', 'Bottom'],
+    'Back Control': ['Top', 'Bottom'],
+    'Knee on Belly': ['Top', 'Bottom'],
+    'North South': ['Top', 'Bottom'],
+    // },
+    // 'Standing': {
+    //   'Gi': ['Collar-Sleeve'],
+    //   'NoGi': ['Over Under', 'Double Underhooks', 'Body Lock'],
+    //   'No Grips': ['Shots'],
+    // }
   },
   'Transition': {
     'Ground': {
@@ -200,10 +209,12 @@ export const sampleData: { [key: string]: any } = {
       'Guard Pull': ['Closed Guard Pull', 'Open Guard Pull']
     }
   },
+  'Takedown': {
+
+  },
   'Submission': {
     'Ground': {
       'Guard': ['Triangle', 'Armbar', 'Kimura', 'Guillotine', 'Omoplata'],
-      'Top': ['Americana', 'Arm Triangle', 'Rear Naked Choke', 'Bow and Arrow'],
       'Leg Locks': ['Heel Hook', 'Knee Bar', 'Toe Hold', 'Ankle Lock'],
       'Turtle': ['Turtle Top', 'Turtle Bottom'],
       'Back Control': ['Top', 'Bottom'],
@@ -217,10 +228,6 @@ export const sampleData: { [key: string]: any } = {
     }
   }
 };
-
-
-export const DEFAULT_CATEGORIES = ['Guard', 'Pass', 'Submission', 'Escape', 'Takedown', 'Position'];
-
 
 export const sampleClasses = [
   {

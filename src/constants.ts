@@ -13,9 +13,10 @@ export enum CATEGORY {
   POS = "Position",
   TRAN = "Transition",
   SUB = "Submission",
+  TD = "TakeDown",
 }
 
-export type CategoryKeys = CATEGORY.POS | CATEGORY.TRAN | CATEGORY.SUB;
+export type CategoryKeys = CATEGORY.POS | CATEGORY.TRAN | CATEGORY.SUB | CATEGORY.TD;
 
 interface CategoryStyle {
   /** The color value, which can be in 'rgba()' or hex format. */
@@ -27,15 +28,19 @@ interface CategoryStyle {
 export const CATEGORIES: Record<CATEGORY, CategoryStyle> = {
   "Position": {
     "color": 'rgba(80,20,255,1)',
-    "radius": 20,
+    "radius": 18,
   },
   "Transition": {
     "color": '#10b981',
-    "radius": 15,
+    "radius": 14,
   },
   "Submission": {
     "color": '#ef4444',
-    "radius": 15,
+    "radius": 14,
+  },
+  "TakeDown": {
+    "color": '#af00',
+    "radius": 14,
   },
 }
 

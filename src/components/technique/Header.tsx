@@ -22,10 +22,10 @@ export default function Header(props: IHeaderProps) {
             setShowTechniqueForm(!showTechniqueForm);
           }
         }}
-        className="btn-primary"
+        className={showTechniqueForm || editingId ? "btn-success" : "btn-primary"}
       >
-        <Plus size={18} />
-        <span>{editingId ? 'Cancel Edit' : 'Add Technique'}</span>
+        {showTechniqueForm || editingId ? null : <Plus size={18} />}
+        <span>{showTechniqueForm || editingId ? 'Cancel' : 'Add Technique'}</span>
       </button>
     </div>
   );

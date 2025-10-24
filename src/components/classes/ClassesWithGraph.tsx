@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { Plus, Trash2, Edit2, Eye, Network, List, X, Minus } from 'lucide-react'
-import { ClassSession } from '../state/types';
+import { Plus, Trash2, Edit2, Network, List } from 'lucide-react'
+import { ClassSession } from '../../state/types';
 import { useSelector } from 'react-redux';
-import { IRootState, useAppDispatch } from '../state/Store';
-import '../App.css';
-import { deleteClass, setClasses, updateClass } from '../state/slices/classSlice';
+import { IRootState, useAppDispatch } from '../../state/Store';
+import '../../App.css';
+import { deleteClass, setClasses, updateClass } from '../../state/slices/classSlice';
 import ClassGraphBuilder from './ClassGraphBuilder';
 import ClassGraphModal from './ClassGraphModal';
 

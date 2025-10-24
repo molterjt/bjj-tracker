@@ -5,12 +5,11 @@ import { sampleClasses, sampleTechniques } from './data/SampleData';
 import Tabs from './components/Tabs';
 import { STORAGE, TABS } from './constants';
 import Techniques from './components/technique/Techniques';
-// import Classes from './components/Classes';
 import { IRootState, useAppDispatch } from './state/Store';
 import { useSelector } from 'react-redux';
 import { setTechniques } from './state/slices/techniquesSlice';
 import { setClasses } from './state/slices/classSlice';
-import ClassesWithGraph from './components/ClassesWithGraph';
+import ClassesWithGraph from './components/classes/ClassesWithGraph';
 
 
 const title = "BJJ Library"

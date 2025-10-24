@@ -5,7 +5,6 @@ import { IRootState, useAppDispatch } from '../../state/Store';
 import { setTechniques, updateTechnique } from '../../state/slices/techniquesSlice';
 import { useSelector } from 'react-redux';
 import { X } from 'lucide-react';
-import { STORAGE } from '../../constants';
 
 interface IFormProps {
   editingId: string | null;
@@ -21,11 +20,6 @@ export default function Form(props: IFormProps) {
   const { techniques } = useSelector(
     (state: IRootState) => state.techState,
   );
-
-  // useEffect(() => {
-  //   console.log('storing techniques: ', techniques.length)
-  //   localStorage.setItem(STORAGE.TECHS, JSON.stringify(techniques));
-  // }, [techniques])
 
   // Update available options based on current path
   useEffect(() => {
@@ -106,6 +100,7 @@ export default function Form(props: IFormProps) {
   };
 
   const addPathToTechnique = () => {
+    // if (currentPath.length >= 1) {
     if (currentPath.length >= 3) {
       const pathString = currentPath.join(' > ');
       if (!newTechnique.paths.includes(pathString)) {

@@ -107,7 +107,7 @@ const ForceGraph: React.FC<ForceGraphProps> = ({ techniques }) => {
 
     // Add circles to nodes
     node.append('circle')
-      .attr('r', (d: any) => getRadius(d.category))
+      .attr('r', (d: any) => getRadius(d.category)) //??
       .attr('fill', (d: any) => getColor(d.category))
       .attr('stroke', NODE_STYLE.stroke_color)
       .attr('stroke-width', NODE_STYLE.stroke_width);
