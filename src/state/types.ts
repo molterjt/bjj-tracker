@@ -4,6 +4,19 @@ export interface Technique {
   paths: string[];
   description: string;
   relatedTechniques: string[];
+  positionIds?: string[]; // NEW: IDs of positions this technique is from/to
+  fromPosition?: string; // Optional: Starting position
+  toPosition?: string; // Optional: Ending position
+}
+
+export interface Position {
+  id: string;
+  name: string;
+  category: string; // Ground, Standing, etc.
+  subcategory?: string; // Guard, Top, etc.
+  description: string;
+  relatedPositions: string[]; // IDs of related positions
+  createdAt?: string;
 }
 
 export interface ClassSession {

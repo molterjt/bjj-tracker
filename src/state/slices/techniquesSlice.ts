@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Technique } from '../types';
-import Techniques from '../../components/technique/Techniques';
 import { STORAGE } from '../../constants';
 
 interface ITechniquesState {
@@ -23,7 +22,6 @@ export const tabState = createSlice({
     ) => {
       state.techniques = payload;
       localStorage.setItem(STORAGE.TECHS, JSON.stringify(state.techniques));
-
     },
     setSelectedTechnique: (
       state: ITechniquesState,

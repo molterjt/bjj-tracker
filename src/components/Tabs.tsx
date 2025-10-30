@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import '../App.css';
-import { BookOpen, Calendar, Network } from 'lucide-react';
+import { BookOpen, Calendar, Network, Target } from 'lucide-react';
 import { TABS } from '../constants';
 import { IRootState, useAppDispatch } from '../state/Store';
 import { setTabState } from '../state/slices/tabSlice';
@@ -23,6 +23,13 @@ export default function Tabs() {
       >
         <BookOpen size={18} />
         <span>Techniques</span>
+      </button>
+      <button
+        onClick={() => handleTabSelect(TABS.POS)}
+        className={`tab ${activeTab === TABS.POS ? 'active' : ''}`}
+      >
+        <Target size={18} />
+        <span>Positions</span>
       </button>
       <button
         onClick={() => handleTabSelect(TABS.CLASS)}

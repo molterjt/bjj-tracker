@@ -1,6 +1,7 @@
 export enum TABS {
   TECHNIQUES = 'techniques',
   CLASS = 'classes',
+  POS = 'positions',
   VIZ = 'visualize'
 }
 
